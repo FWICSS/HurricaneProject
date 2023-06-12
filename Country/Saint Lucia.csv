@@ -1,0 +1,23 @@
+indicator,Type of disaster,Indicator,Country__ESTANDAR,Years__ESTANDAR,value,unit,notes_ids,source_id
+"Number of disasters, deaths and directly affected persons, by type of disasters",Geophysical,Number of events,Saint Lucia,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Earthquakes,Number of events,Saint Lucia,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Saint Lucia,1994,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Saint Lucia,1996,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Saint Lucia,1999,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Saint Lucia,2004,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Saint Lucia,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Saint Lucia,2010,3,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Saint Lucia,2013,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Saint Lucia,2016,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Saint Lucia,2021,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Saint Lucia,1994,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Saint Lucia,1999,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Saint Lucia,2004,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Saint Lucia,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Saint Lucia,2010,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Saint Lucia,2016,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Saint Lucia,2021,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Floods,Number of events,Saint Lucia,2010,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Floods,Number of events,Saint Lucia,2013,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Wet mass desplacement,Number of events,Saint Lucia,1996,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Droughts,Number of events,Saint Lucia,2010,1,Number,,742

@@ -1,0 +1,17 @@
+indicator,Type of disaster,Indicator,Country__ESTANDAR,Years__ESTANDAR,value,unit,notes_ids,source_id
+"Number of disasters, deaths and directly affected persons, by type of disasters",Geophysical,Number of events,Guadeloupe,2004,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Earthquakes,Number of events,Guadeloupe,2004,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Guadeloupe,1990,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Guadeloupe,1995,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Guadeloupe,1998,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Guadeloupe,1999,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Guadeloupe,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Guadeloupe,2017,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Guadeloupe,1990,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Guadeloupe,1995,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Guadeloupe,1998,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Guadeloupe,1999,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Guadeloupe,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Guadeloupe,2017,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Guadeloupe,2022,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Guadeloupe,2022,1,Number,,742

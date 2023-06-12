@@ -1,0 +1,16 @@
+indicator,Type of disaster,Indicator,Country__ESTANDAR,Years__ESTANDAR,value,unit,notes_ids,source_id
+"Number of disasters, deaths and directly affected persons, by type of disasters",Earthquakes,Number of events,Barbados,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Geophysical,Number of events,Barbados,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Barbados,1995,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Barbados,2002,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Barbados,2004,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Barbados,2010,2,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Barbados,2017,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Barbados,2021,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Barbados,1995,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Barbados,2002,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Barbados,2004,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Barbados,2010,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Barbados,2017,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Barbados,2021,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Droughts,Number of events,Barbados,2010,1,Number,,742

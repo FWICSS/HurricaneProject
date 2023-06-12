@@ -1,0 +1,20 @@
+indicator,Type of disaster,Indicator,Country__ESTANDAR,Years__ESTANDAR,value,unit,notes_ids,source_id
+"Number of disasters, deaths and directly affected persons, by type of disasters",Earthquakes,Number of events,Trinidad and Tobago,1997,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Geophysical,Number of events,Trinidad and Tobago,1997,2,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Volcanic eruptions,Number of events,Trinidad and Tobago,1997,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Trinidad and Tobago,1990,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Trinidad and Tobago,1993,2,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Trinidad and Tobago,1996,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Trinidad and Tobago,2004,2,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Trinidad and Tobago,2005,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Trinidad and Tobago,2010,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Trinidad and Tobago,2018,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Trinidad and Tobago,1990,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Trinidad and Tobago,1993,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Trinidad and Tobago,2004,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Trinidad and Tobago,2005,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Floods,Number of events,Trinidad and Tobago,1993,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Floods,Number of events,Trinidad and Tobago,1996,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Floods,Number of events,Trinidad and Tobago,2018,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Wet mass desplacement,Number of events,Trinidad and Tobago,2004,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Droughts,Number of events,Trinidad and Tobago,2010,1,Number,,742

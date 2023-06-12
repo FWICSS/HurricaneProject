@@ -1,0 +1,19 @@
+indicator,Type of disaster,Indicator,Country__ESTANDAR,Years__ESTANDAR,value,unit,notes_ids,source_id
+"Number of disasters, deaths and directly affected persons, by type of disasters",Geophysical,Number of events,Martinique,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Earthquakes,Number of events,Martinique,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Martinique,1990,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Martinique,1993,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Martinique,1995,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Martinique,1996,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Martinique,1999,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Martinique,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Martinique,2011,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Climate change related,Number of events,Martinique,2017,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Martinique,1990,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Martinique,1993,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Martinique,1995,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Martinique,1996,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Martinique,1999,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Martinique,2007,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Martinique,2011,1,Number,,742
+"Number of disasters, deaths and directly affected persons, by type of disasters",Storms,Number of events,Martinique,2017,1,Number,,742

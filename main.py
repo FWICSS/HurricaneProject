@@ -15,6 +15,24 @@ def getNamesHuricanes():
     print(df)
     df.to_csv("Hurricane_Name.csv")
 
+def setCsvByHurricanes():
+    dataHurricanes = pd.read_csv("Hurricane_Name.csv")
+    unique_Hurricanes = dataHurricanes["NAME"].unique()
+    folder_name = 'Hurricanes'
+
+    if not os.path.exists(folder_name):
+        os.makedirs(folder_name)
+    for hurricanes in unique_Hurricanes:
+        filter_Hurricanes = dataHurricanes[dataHurricanes["NAME"] == hurricanes]
+
+        filename = f'{folder_name}/{hurricanes}.csv'
+        filter_Hurricanes.to_csv(filename, index=False)
+
+def listOFBassin():
+    dataHurricanes = pd.read_csv("Hurricane_Name.csv")
+    unique_Bassin = dataHurricanes["BASIN"].unique()
+    print(f"\n list des basins : {unique_Bassin}")
+
 def setCsvByCountry():
     dataByCountry = pd.read_csv("data_1686321075.csv")
     #dataLatinAmericaAndCaraibes = pd.read_csv("data_1686320929.csv")
@@ -32,4 +50,14 @@ def setCsvByCountry():
         filtered_df.to_csv(filename, index=False)
 
 if __name__ == '__main__':
-        getNamesHuricanes()
+        print(f"""
+        1. Lire les fichier
+        2. Netoyer les données
+            supprimer les ouragans si on ne connais aucun de leur basins
+        3. Faire un graphique par Ouragan (trajectoire)
+        4. Compare les trajectoire
+        5. Analyser les trajectoire par année
+        """)
+        listOFBassin()
+
+#%%

@@ -58,5 +58,4 @@ if __name__ == '__main__':
         4. Compare les trajectoire
         5. Analyser les trajectoire par année
         """)
-        setCsvByHurricanes()
 #%%

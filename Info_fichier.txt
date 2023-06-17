@@ -1,0 +1,55 @@
+Le fichier CSV "Hurricane_Name.csv" contient des données relatives aux ouragans.
+
+
+DESCRIPTION DES COLONNES :
+>> OBJECTID
+    Un identifiant numérique unique pour chaque enregistrement.
+>> SID
+    Identifiant spécifique de l'ouragan.
+>> BASIN
+    Le bassin océanique dans lequel l'ouragan s'est formé.
+>> SUBBASIN
+    Le sous-bassin océanique dans lequel l'ouragan s'est formé.
+>> NAME
+    Le nom de l'ouragan.
+>> LAT
+    La latitude de la position de l'ouragan.
+>> LON
+    La longitude de la position de l'ouragan.
+>> USA_WIND
+    La vitesse du vent associée à l'ouragan aux États-Unis (en unité non spécifiée).
+>> USA_PRES
+    La pression de l'ouragan aux États-Unis (en unité non spécifiée).
+>> year
+    L'année de l'enregistrement.
+>> month
+    Le mois de l'enregistrement.
+>> day
+    Le jour de l'enregistrement.
+>> Hurricane_Date
+    La date et l'heure de l'enregistrement de l'ouragan.
+
+
+Liste des bassins :
+- WP : Western Pacific (Pacifique occidental)
+       Comprend les pays et les îles situés dans la partie occidentale de l'océan Pacifique,
+       tels que les Philippines, la Chine, le Japon, l'Australie, etc.
+
+- EP : Eastern Pacific (Pacifique oriental)
+       Comprend la partie orientale de l'océan Pacifique,
+       le long de la côte ouest de l'Amérique du Nord et de l'Amérique centrale,
+       dont des pays comme les États-Unis (y compris Hawaï et l'Alaska), le Mexique, le Chili, etc.
+
+- NI : North Indian Ocean (océan Indien nord)
+       Fait référence à la partie nord de l'océan Indien,
+       comprenant des pays comme l'Inde, le Pakistan, le Bangladesh, les Maldives, etc.
+
+- SP : South Pacific (Pacifique sud)
+       Comprend la partie sud de l'océan Pacifique,
+       dont des pays et des îles telles que la Nouvelle-Zélande, les Fidji, la Polynésie française, etc.
+
+- SI : Southern Indian Ocean (océan Indien sud)
+       Fait référence à la partie sud de l'océan Indien,
+       dont des zones maritimes au large des côtes de l'Afrique australe et de l'Australie,
+       ainsi que des îles isolées comme les îles Kerguelen et les îles Heard-et-MacDonald.
+

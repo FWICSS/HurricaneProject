@@ -49,6 +49,7 @@ for name_ouragan in name_ouragans:
         folder_name = f"Trajectoire/{year_ouragan}"
         if not os.path.exists(folder_name):
             os.makedirs(folder_name)
-        filename = f'{folder_name}/{name_ouragan}_{year_ouragan}.png'
+        name = name_ouragan.replace(":", "-")
+        filename = f'{folder_name}/{name}_{year_ouragan}.png'
         fig.savefig(filename)
 

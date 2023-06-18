@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("Hurricane_Name.csv")
+df = pd.read_csv("./data/Hurricane_Name.csv")
 
 bassin_ep = df[df['BASIN'] == 'EP']
 nb_tempêtes_par_bassin = df['BASIN'].value_counts()

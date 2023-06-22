@@ -45,13 +45,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/NOT_NAMED_1851_test.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>

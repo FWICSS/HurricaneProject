@@ -14,4 +14,5 @@ la caraïbes, résultat dans le fichier hurricanesPastInCaribbean.csv
 Nous avons ensuite créer un graphique des trajectoires 
 des ouragans et tempêtes tropicales qui sont passé par la caraïbes
 dans le dossier Trajectoire nous retrouverons classé les graphiques par année
+
 ![graphique des trajectoires](Trajectoire/2017/IRMA_2017.png)

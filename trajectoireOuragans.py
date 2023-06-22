@@ -3,7 +3,7 @@ import cartopy.crs as ccrs
 import pandas as pd
 import os
 
-data = pd.read_csv("data/hurricanes_Past_In_Caribbean.csv", low_memory=False)
+data = pd.read_csv("Hurricanes/IRMA.csv", low_memory=False)
 plt.rcParams['agg.path.chunksize'] = 2000
 plt.rcParams['path.simplify_threshold'] = 0.5
 data = data[data["NAME"] != "NOT_NAMED"]
@@ -30,9 +30,14 @@ for name_ouragan in name_ouragans:
         # Créer une nouvelle figure pour l'ouragan courant
         fig = plt.figure(figsize=(10, 6))
         ax = plt.axes(projection=ccrs.PlateCarree())
+        longitude = data_ouragan["LON"].tolist()
+        latitude = data_ouragan["LAT"].tolist()
+
+        print(longitude)
+        print(latitude)
 
         # Tracer la courbe de trajectoire pour l'ouragan courant
-        ax.plot(data_ouragan["LON"], data_ouragan["LAT"], marker='o', transform=ccrs.PlateCarree())
+        ax.plot(longitude, latitude, marker='o')
 
         # Ajouter des fonctionnalités cartographiques
         ax.coastlines()
@@ -50,6 +55,6 @@ for name_ouragan in name_ouragans:
         if not os.path.exists(folder_name):
             os.makedirs(folder_name)
         name = name_ouragan.replace(":", "-")
-        filename = f'{folder_name}/{name}_{year_ouragan}.png'
-        fig.savefig(filename)
+        # filename = f'{folder_name}/{name}_{year_ouragan}.png'
+        # fig.savefig(filename)
 

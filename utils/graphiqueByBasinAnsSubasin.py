@@ -4,53 +4,54 @@ import pandas as pd
 from utils.separationOuragan import getSeparedHurricane
 import numpy as np
 
-def getAllGraphique(data : pd.DataFrame):
-
+def getAllGraphique(data: pd.DataFrame):
     all_ouragans = getSeparedHurricane(data)
-    # Liste des bassins et sous-bassins
+
     bassins = data['BASIN'].unique().tolist()
-    sous_bassins = data['SUBBASIN'].unique().tolist()
+    sous_bassins = data['SUBBASIN'].unique().astype(str).tolist()
 
-    # Compteurs pour le nombre d'ouragans par bassin et sous-bassin
     compteur_bassins = Counter()
-    compteur_sous_bassins = {bassin: Counter() for bassin in bassins}
-    # Parcourir les dataframes
-    for dataframe in all_ouragans:
-        # Compter les ouragans par bassin
-        compteur_bassins.update(dataframe['BASIN'].dropna().tolist())
+    compteur_sous_bassins = {}
 
-        # Compter les ouragans par sous-bassin de chaque bassin
+    for dataframe in all_ouragans:
+        list_bassin = dataframe['BASIN'].unique().tolist()
+        compteur_bassins.update(list_bassin)
+
         for bassin in bassins:
-            sous_bassin_counts = dataframe[dataframe['BASIN'] == bassin]['SUBBASIN'].dropna().tolist()
+            list_sous_bassin = dataframe[dataframe['BASIN'] == bassin]['SUBBASIN'].unique().astype(str).tolist()
+            sous_bassin_counts = Counter(dataframe[dataframe['BASIN'] == bassin]['SUBBASIN'])
+            if bassin not in compteur_sous_bassins:
+                compteur_sous_bassins[bassin] = Counter()
             compteur_sous_bassins[bassin].update(sous_bassin_counts)
 
-    # Créer le graphique à barres
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8))
     fig.subplots_adjust(hspace=0.5)
 
-    # Graphique pour le nombre d'ouragans par bassin
-    ax1.bar(compteur_bassins.keys(), compteur_bassins.values())
+    ax1.bar(list(map(str, compteur_bassins.keys())), list(map(str, sorted(compteur_bassins.values()))))
     ax1.set_xlabel('Bassins')
     ax1.set_ylabel("Nombre d'ouragans")
     ax1.set_title("Nombre d'ouragans par bassin")
 
-    # Graphique pour le nombre d'ouragans dans chaque sous-bassin par bassin
     x = range(len(sous_bassins))
     width = 0.1
     colors = ['blue', 'green', 'red', 'cyan', 'purple', 'yellow', 'black', 'white', 'orange', 'purple', 'brown', 'pink']
 
+    sorted_sous_bassins, sorted_counts = zip(*sorted(zip(sous_bassins, [compteur_sous_bassins[bassin][sous_bassin] for sous_bassin in sous_bassins])))
+
     for i, bassin in enumerate(bassins):
-        counts = [compteur_sous_bassins[bassin][sous_bassin] for sous_bassin in sous_bassins]
+        counts = list(map(str, [compteur_sous_bassins[bassin][sous_bassin] for sous_bassin in sorted_sous_bassins]))
         ax2.bar([val + (i * width) for val in x], counts, width=width, color=colors[i], label=bassin)
 
     ax2.set_xlabel('Sous-bassins')
     ax2.set_ylabel("Nombre d'ouragans")
     ax2.set_title("Nombre d'ouragans par sous-bassin et par bassin")
     ax2.set_xticks([val + ((len(bassins) - 1) * width) / 2 for val in x])
-    ax2.set_xticklabels(sous_bassins)
+    ax2.set_xticklabels(sorted_sous_bassins)
     ax2.legend(bassins)
 
     plt.show()
+
+
 
 
 def getNumberHurricaneByYear(data: pd.DataFrame):
@@ -153,4 +154,5 @@ def getNumberHurricaneByYear(data: pd.DataFrame):
 
 if __name__ == '__main__':
     data = pd.read_csv("../data/Historical_Hurricane_Tracks.csv", low_memory=False)
-    getNumberHurricaneByYear(data)
+    # getNumberHurricaneByYear(data)
+    getAllGraphique(data)

@@ -38,3 +38,4 @@ def getSeparedHurricane(data: pd.DataFrame):
 if __name__ == '__main__':
     data = pd.read_csv("data/Hurricane_Name.csv")
     print(getNumberOfHurricane(data))
+

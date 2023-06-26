@@ -18,8 +18,8 @@ def getAllGraphique(data: pd.DataFrame):
         compteur_bassins.update(list_bassin)
 
         for bassin in bassins:
-            list_sous_bassin = dataframe[dataframe['BASIN'] == bassin]['SUBBASIN'].unique().astype(str).tolist()
-            sous_bassin_counts = Counter(dataframe[dataframe['BASIN'] == bassin]['SUBBASIN'])
+            list_sous_bassin = dataframe[dataframe['BASIN'] == bassin]['SUBBASIN'].unique().tolist()
+            sous_bassin_counts = Counter(list_sous_bassin)
             if bassin not in compteur_sous_bassins:
                 compteur_sous_bassins[bassin] = Counter()
             compteur_sous_bassins[bassin].update(sous_bassin_counts)
@@ -37,19 +37,29 @@ def getAllGraphique(data: pd.DataFrame):
     colors = ['blue', 'green', 'red', 'cyan', 'purple', 'yellow', 'black', 'white', 'orange', 'purple', 'brown', 'pink']
 
     sorted_sous_bassins, sorted_counts = zip(*sorted(zip(sous_bassins, [compteur_sous_bassins[bassin][sous_bassin] for sous_bassin in sous_bassins])))
+    sorted_dict = {k: v for k, v in sorted(compteur_sous_bassins.items(), key=lambda item: item[1])}
+
+    # Obtenir toutes les valeurs uniques
+    unique_values = set()
+    for sous_bassin in compteur_sous_bassins.values():
+        unique_values.update(sous_bassin.values())
+
+    # Trier les valeurs uniques dans l'ordre croissant
+    sorted_values = sorted(unique_values)
 
     for i, bassin in enumerate(bassins):
-        counts = list(map(str, [compteur_sous_bassins[bassin][sous_bassin] for sous_bassin in sorted_sous_bassins]))
+        counts = list(map(str, [sorted_dict[bassin][sous_bassin] for sous_bassin in sorted_sous_bassins]))
         ax2.bar([val + (i * width) for val in x], counts, width=width, color=colors[i], label=bassin)
 
     ax2.set_xlabel('Sous-bassins')
     ax2.set_ylabel("Nombre d'ouragans")
-    ax2.set_title("Nombre d'ouragans par sous-bassin et par bassin")
+    ax2.set_title("Nombre d'ouragans par sous-bassin par bassin")
     ax2.set_xticks([val + ((len(bassins) - 1) * width) / 2 for val in x])
     ax2.set_xticklabels(sorted_sous_bassins)
     ax2.legend(bassins)
 
     plt.show()
+
 
 
 
@@ -77,31 +87,7 @@ def getNumberHurricaneByYear(data: pd.DataFrame):
         # hurricanes_CP = dataframe[dataframe['SUBBASIN'] == 'CP']
         # counter_CP.update(hurricanes_CP['year'].dropna().tolist())
 
-    print(f"""
-    Ouragans dans le monde entre {min_year} et {max_year} :
-    pour un total de {sum(counter_total.values())} ouragans.
-    
-    -Année avec le plus d'ouragans : {counter_total.most_common(1)[0][0]}
-     Nombre d'ouragans : {counter_total.most_common(1)[0][1]}
-    
-    -Année avec le moins d'ouragans : {counter_total.most_common()[-1][0]}
-     Nombre d'ouragans : {counter_total.most_common()[-1][1]}
-    
-    -Avec en moyenne {round(sum(counter_total.values()) / len(counter_total), 2)} ouragans par année.
-    
-    Ouragans dans le sous-bassin "CP" entre {min_year} et {max_year} :
-    pour un total de {sum(counter_CP.values())} ouragans.
-    
-    -Année avec le plus d'ouragans : {counter_CP.most_common(1)[0][0]}
-     Nombre d'ouragans : {counter_CP.most_common(1)[0][1]}
-    
-    -Année avec le moins d'ouragans : {counter_CP.most_common()[-1][0]}
-     Nombre d'ouragans : {counter_CP.most_common()[-1][1]}
-    
-    -Avec en moyenne {round(sum(counter_CP.values()) / len(counter_CP), 2)} ouragans par année.
-    
-    
-    """)
+
 
     # Trier les années dans l'ordre croissant
     years = sorted(set(years))
@@ -150,6 +136,31 @@ def getNumberHurricaneByYear(data: pd.DataFrame):
         plt.tight_layout()
         plt.show()
 
+        print(f"""
+            Ouragans dans le monde entre {min_year} et {max_year} :
+            pour un total de {sum(counter_total.values())} ouragans.
+
+            -Année avec le plus d'ouragans : {counter_total.most_common(1)[0][0]}
+             Nombre d'ouragans : {counter_total.most_common(1)[0][1]}
+
+            -Année avec le moins d'ouragans : {counter_total.most_common()[-1][0]}
+             Nombre d'ouragans : {counter_total.most_common()[-1][1]}
+
+            -Avec en moyenne {round(sum(counter_total.values()) / len(counter_total), 2)} ouragans par année.
+
+            Ouragans dans le sous-bassin "CP" entre {min_year} et {max_year} :
+            pour un total de {sum(counter_CP.values())} ouragans.
+
+            -Année avec le plus d'ouragans : {counter_CP.most_common(1)[0][0]}
+             Nombre d'ouragans : {counter_CP.most_common(1)[0][1]}
+
+            -Année avec le moins d'ouragans : {counter_CP.most_common()[-1][0]}
+             Nombre d'ouragans : {counter_CP.most_common()[-1][1]}
+
+            -Avec en moyenne {round(sum(counter_CP.values()) / len(counter_CP), 2)} ouragans par année.
+
+
+            """)
 
 
 if __name__ == '__main__':

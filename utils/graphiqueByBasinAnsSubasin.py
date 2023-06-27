@@ -162,8 +162,61 @@ def getNumberHurricaneByYear(data: pd.DataFrame):
 
             """)
 
+def getStatsHurricaneByYear(data: pd.DataFrame):
+    all_hurricanes = getSeparedHurricane(data)
+    years = data['year'].unique().tolist()
+    min_year = min(years)
+    max_year = max(years)
+
+    # Compteur pour le nombre d'ouragans par année
+    counter_total = Counter()
+    counter_CP = Counter()
+
+    # Parcourir les dataframes
+    for dataframe in all_hurricanes:
+        list_year = dataframe['year'].unique().tolist()
+        list_basin = dataframe['BASIN'].unique().tolist()
+        hurricanes_CP = dataframe[dataframe['SUBBASIN'] == 'CP']
+        list_subbasin = hurricanes_CP['year'].unique().tolist()
+        counter_total.update(list_year)
+        counter_CP.update(list_subbasin)
+        #
+        # # Filtrer les ouragans du sous-bassin "CP" et compter par année
+        # hurricanes_CP = dataframe[dataframe['SUBBASIN'] == 'CP']
+        # counter_CP.update(hurricanes_CP['year'].dropna().tolist())
+
+    # Trier les années dans l'ordre croissant
+    years = sorted(set(years))
+
+    print(f"""
+                Ouragans dans le monde entre {min_year} et {max_year} :
+                pour un total de {sum(counter_total.values())} ouragans.
+
+                -Année avec le plus d'ouragans : {counter_total.most_common(1)[0][0]}
+                 Nombre d'ouragans : {counter_total.most_common(1)[0][1]}
+
+                -Année avec le moins d'ouragans : {counter_total.most_common()[-1][0]}
+                 Nombre d'ouragans : {counter_total.most_common()[-1][1]}
+
+                -Avec en moyenne {round(sum(counter_total.values()) / len(counter_total), 2)} ouragans par année.
+
+                Ouragans dans le sous-bassin "CP" entre {min_year} et {max_year} :
+                pour un total de {sum(counter_CP.values())} ouragans.
+
+                -Année avec le plus d'ouragans : {counter_CP.most_common(1)[0][0]}
+                 Nombre d'ouragans : {counter_CP.most_common(1)[0][1]}
+
+                -Année avec le moins d'ouragans : {counter_CP.most_common()[-1][0]}
+                 Nombre d'ouragans : {counter_CP.most_common()[-1][1]}
+
+                -Avec en moyenne {round(sum(counter_CP.values()) / len(counter_CP), 2)} ouragans par année.
+
+
+                """)
+
 
 if __name__ == '__main__':
     data = pd.read_csv("../data/Historical_Hurricane_Tracks.csv", low_memory=False)
     # getNumberHurricaneByYear(data)
-    getAllGraphique(data)
+    # getAllGraphique(data)
+    getStatsHurricaneByYear(data)

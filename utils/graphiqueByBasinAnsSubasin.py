@@ -136,31 +136,7 @@ def getNumberHurricaneByYear(data: pd.DataFrame):
         plt.tight_layout()
         plt.show()
 
-        print(f"""
-            Ouragans dans le monde entre {min_year} et {max_year} :
-            pour un total de {sum(counter_total.values())} ouragans.
 
-            -Année avec le plus d'ouragans : {counter_total.most_common(1)[0][0]}
-             Nombre d'ouragans : {counter_total.most_common(1)[0][1]}
-
-            -Année avec le moins d'ouragans : {counter_total.most_common()[-1][0]}
-             Nombre d'ouragans : {counter_total.most_common()[-1][1]}
-
-            -Avec en moyenne {round(sum(counter_total.values()) / len(counter_total), 2)} ouragans par année.
-
-            Ouragans dans le sous-bassin "CP" entre {min_year} et {max_year} :
-            pour un total de {sum(counter_CP.values())} ouragans.
-
-            -Année avec le plus d'ouragans : {counter_CP.most_common(1)[0][0]}
-             Nombre d'ouragans : {counter_CP.most_common(1)[0][1]}
-
-            -Année avec le moins d'ouragans : {counter_CP.most_common()[-1][0]}
-             Nombre d'ouragans : {counter_CP.most_common()[-1][1]}
-
-            -Avec en moyenne {round(sum(counter_CP.values()) / len(counter_CP), 2)} ouragans par année.
-
-
-            """)
 
 def getStatsHurricaneByYear(data: pd.DataFrame):
     all_hurricanes = getSeparedHurricane(data)

@@ -11,29 +11,16 @@ def getNumberOfHurricane(data: pd.DataFrame):
     #           f"a {ouragan_data['Hurricane_Date'].max()} ")
 
 def getSeparedHurricane(data: pd.DataFrame):
-    # Convertir la colonne "Hurricane_Date" en type datetime
-    data["Hurricane_Date"] = pd.to_datetime(data["Hurricane_Date"])
+    grouped = data.groupby('SID')
+    list_of_dataframes = []
+    for group_name, group_data in grouped:
+        # Crée un nouveau DataFrame pour chaque groupe
+        grouped_df = pd.DataFrame(group_data)
 
-    # Calculer la différence entre les dates consécutives
-    data["Date_Diff"] = data["Hurricane_Date"].diff()
+        # Ajoute le DataFrame à la liste
+        list_of_dataframes.append(grouped_df)
 
-    # Définir une durée minimale d'interruption pour considérer un nouvel ouragan (2 jours dans cet exemple)
-    min_interruption = pd.Timedelta(days=2)
-
-    # Identifier les positions où l'interruption dépasse la durée minimale
-    interruption_indices = data[data["Date_Diff"] > min_interruption].index
-
-    # Diviser les données en plusieurs ouragans
-    ouragans = []
-    start_index = 0
-    for end_index in interruption_indices:
-        ouragan_data = data.iloc[start_index:end_index]
-        ouragans.append(ouragan_data)
-        start_index = end_index
-    # Ajouter le dernier ouragan
-    ouragan_data = data.iloc[start_index:]
-    ouragans.append(ouragan_data)
-    return ouragans
+    return list_of_dataframes
 
 def getSeparedHurricaneByName(data: pd.DataFrame):
     grouped = data.groupby(['NAME','year'])
@@ -84,7 +71,6 @@ def getOcurrenceDataframe(dataframes):
     for df in dataframes_with_max_occurrences:
         print(df["NAME"].unique())
 
-    print(occurrences)
 
 
 if __name__ == '__main__':

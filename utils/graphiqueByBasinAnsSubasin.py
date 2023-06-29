@@ -156,7 +156,7 @@ def getStatsHurricaneByYear(data: pd.DataFrame):
         list_subbasin = hurricanes_CP['year'].unique().tolist()
         counter_total.update(list_year)
         counter_CP.update(list_subbasin)
-        #
+
         # # Filtrer les ouragans du sous-bassin "CP" et compter par année
         # hurricanes_CP = dataframe[dataframe['SUBBASIN'] == 'CP']
         # counter_CP.update(hurricanes_CP['year'].dropna().tolist())

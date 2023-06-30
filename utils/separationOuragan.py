@@ -147,7 +147,6 @@ def getMeanHurricane(liste_dataframes):
 
     fig.savefig('ouragan_type.png')
 
-
 if __name__ == '__main__':
     data = pd.read_csv("../data/hurricanes_Past_In_Caribbean.csv")
     data_caribean = getSeparedHurricaneByName(data)

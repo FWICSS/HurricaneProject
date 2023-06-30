@@ -67,8 +67,8 @@ def getOcurrenceDataframe(dataframes):
 
     # Liste des DataFrames ayant le maximum d'occurrences de lignes
     dataframes_with_max_occurrences = []
+
     for df in dataframes:
-        # print(df)
         if df.shape[0] == key_max_occurrences:
             dataframes_with_max_occurrences.append(df)
 
@@ -94,16 +94,35 @@ def getMeanHurricane(liste_dataframes):
         latitudes_totales.append(lat)
         longitudes_totales.append(lon)
 
-    print(latitudes_totales)
-    moyenne_latitude = pd.concat(latitudes_totales, axis=1).mean(axis=1)
-    moyenne_longitude = pd.concat(longitudes_totales, axis=1).mean(axis=1)
-    moyenne_latitude_triees = sorted(moyenne_latitude, reverse=True)
-    moyenne_longitude_triees = sorted(moyenne_longitude, reverse=True)
-    moyennes = []
+
+    for df in latitudes_totales:
+        df.reset_index(drop=True, inplace=True)
+
+    for df in longitudes_totales:
+        df.reset_index(drop=True, inplace=True)
+
+    moyenne_latitude = pd.concat(latitudes_totales,axis=1).mean(axis=0)
+    moyenne_longitude = pd.concat(longitudes_totales, axis=1).mean(axis=0)
+    moyenne_longitude_trees = sorted(moyenne_longitude)
+    moyenne_latitude_trees = sorted(moyenne_latitude)
+
+    # Trier les points en fonction de la longitude
+    points_tries = sorted(zip(moyenne_latitude, moyenne_longitude), key=lambda x: x[1])
+    latitudes_triees, longitudes_triees = zip(*points_tries)
+
     min_lat = moyenne_latitude.min()
     max_lat = moyenne_latitude.max()
     min_lon = moyenne_longitude.min()
     max_lon = moyenne_longitude.max()
+    print(f"""
+    La latitude moyenne est de {moyenne_latitude.mean()}
+    La latitude min est de {min_lat}
+    La latitude max est de {max_lat}
+    
+    La longitude moyenne est de {moyenne_longitude.mean()}
+    La longitude min est de {min_lon}
+    La longitude max est de {max_lon}
+    """)
     # Calculer une marge pour étendre légèrement l'étendue de la carte
     margin = 1.0
 
@@ -114,8 +133,7 @@ def getMeanHurricane(liste_dataframes):
     ax = plt.axes(projection=ccrs.PlateCarree())
 
     # Tracer la courbe de trajectoire pour l'ouragan courant
-    ax.plot(moyenne_longitude_triees, moyenne_latitude_triees, marker='o')
-
+    ax.plot(longitudes_triees, latitudes_triees, marker='o')
     # Ajouter des fonctionnalités cartographiques
     ax.coastlines()
     ax.gridlines()
@@ -127,26 +145,7 @@ def getMeanHurricane(liste_dataframes):
     # Afficher le graphique
     plt.show()
 
-    total_lat = 0
-    total_lon = 0
-    # if len(latitudes_totales) == len(longitudes_totales):
-    #     for i in range(len(latitudes_totales)):
-    #         total_lat += latitudes_totales[i]
-    #         total_lon += longitudes_totales[i]
-    #
-    #     moyenne_latitude = total_lat / len(latitudes_totales)
-    #     moyenne_longitude = total_lon / len(longitudes_totales)
-    #
-    # if len(latitudes_totales) != len(longitudes_totales):
-    #     return
-    # moyenne_latitude = pd.concat(latitudes_totales, axis=1).mean(axis=1)
-    # moyenne_longitude = pd.concat(longitudes_totales, axis=1).mean(axis=1)
-    #
-    # plt.plot(moyenne_longitude, moyenne_latitude)
-    # plt.xlabel('Longitude')
-    # plt.ylabel('Latitude')
-    # plt.title('Courbe moyenne des coordonnées')
-    # plt.show()
+    fig.savefig('ouragan_type.png')
 
 
 if __name__ == '__main__':
